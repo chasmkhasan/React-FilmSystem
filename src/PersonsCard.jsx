@@ -19,9 +19,8 @@ function PersonsCard(props){
 
     return(
         <CardContainer>
-            <h1>Name:</h1>
-            <p>Designation:</p>
-            <p>Description:</p>
+            <h1>Full Name:</h1>
+            
         </CardContainer>
 
     );
