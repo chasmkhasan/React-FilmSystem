@@ -1,5 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+
+import PersonalCardLink from './assets/components/PersonalCardLink';
+
 
 const CardContainer = styled.div`
 display: flex;
@@ -19,7 +24,12 @@ function PersonsCard(props){
 
     return(
         <CardContainer>
-            <h1>Full Name:</h1>
+            
+                <h1>Full Name:</h1>
+                <p>Designation</p>
+                <p>Decription</p>
+                
+            
             
         </CardContainer>
 

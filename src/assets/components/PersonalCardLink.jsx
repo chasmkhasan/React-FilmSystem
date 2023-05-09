@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 import PersonsCard from '../../PersonsCard';
 
@@ -17,16 +18,16 @@ margin-bottom: 1em;
 background: blueviolet;
 `;
 
-function PersonalCardContainer() {
+function PersonalCardLink() {
 
     return(
-        <CardContainer>
-            <h1>Full Name: </h1>
-            <p>Designation:</p>
-            <p>Description</p>
-
-        </CardContainer>
-        
+        <BrowserRouter>
+            <PersonalCardContainer>
+                <h1>Full Name: </h1>
+                <p>Designation:</p>
+                <p>Description</p>
+            </PersonalCardContainer>
+        </BrowserRouter>
     )
 }
 

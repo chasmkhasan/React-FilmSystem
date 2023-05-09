@@ -1,5 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams
+} from "react-router-dom";
 
 import Persons from './Persons';
 import PersonsCard from './PersonsCard';
