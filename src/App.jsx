@@ -1,47 +1,30 @@
 import React from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams
+} from "react-router-dom";
 
-import Persons from './Persons';
-import PersonsCard from './PersonsCard';
-import PersonList from './assets/components/ConnectionApi';
+import Person from './Pages/Person';
+import Layout from './assets/components/shared/Layout';
 
-
-const MainContainer = styled.main`
-display: flex;
-flex-direction: column;
-//justify-content: space-evenly;
-align-items: center;
-min-height: 100vh;
-`;
-
-const StyledPara = styled.p`
-max-width: 20em;
-`;
-
-/*
-const mySQL = [
-  {
-    "name": "MK Hasan",
-    "designation": "Head Office",
-    "description": "Responsible Person",
-  }
-]
-*/
 
 function App() {
+  const [count, setCount] = useState(0)
 
   return (
-    <MainContainer>
-        <h1>Welcome</h1>
-        <StyledPara>This is the most awesomest page ever. Trust me!</StyledPara>
-        <Persons/>
-        <PersonsCard/>
-        <PersonsCard/>
-        <PersonsCard/>
-        <PersonsCard/>
-        <PersonsCard/>
-    </MainContainer>
+    
+    <Layout>
+        <Person/>
+    </Layout>
+    
   )
 }
 
-export default App
+export default App;
