@@ -63,24 +63,15 @@ function GetPersonChoice(props){
                     <Title><b>Movie Name:</b>{sv.name}</Title>
                     <Title>
                       <b>Movie Link:</b>{sv.link}
-                      <Link to={{ pathname: "./MovieLinkPost",
-                        state: sv.personID,
-                        state: sv.genreID,
-                        }}>Add New Film and Link
-                      </Link>
+                      <a href= {'/MovieLinkPost/' + sv.id } > Add New Film and Link </a>
                     </Title>
                     <Title>
                       <b>Movie Rating:</b>{sv.rating}
-                      <Link to={{ pathname: "./MovieRatingPost",
-                      state: sv.personID,
-                      state: sv.movieId,
-                      }}
-                      >Add New Rating
-                      </Link>
+                      <a href= {'/MovieRatingPost/' + sv.id } > Add New Rating </a>
                     </Title>
                     <Title>
                       <b>Person ID:</b>{sv.personID}
-                      <Link to={{ pathname: "./NewGenrePost", state: sv.name }}>Add New Genre</Link>
+                      <a href= {'/NewGenrePost/' + sv.id } > Add New Rating </a>
                       </Title>
                     <Title><b>Genre ID:</b>{sv.genreID}</Title>
                   </Card>
