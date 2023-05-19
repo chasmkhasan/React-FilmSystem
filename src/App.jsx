@@ -40,7 +40,7 @@ function App() {
         <Switch>
           <Route exact path="/Person" component={Person}></Route>
           <Route path="/Genre" component={Genre}></Route>
-          <Route path="/GetPersonChoice" component={GetPersonChoice}></Route>
+          <Route path="/GetPersonChoice/:id" component={GetPersonChoice}></Route>
           <Route path="/MovieLinkPost" component={MovieLinkPost}></Route>
           <Route path="/MovieRatingPost" component={MovieRating}></Route>
           <Route path="/NewGenrePost" component={NewGenrePost}></Route>

@@ -42,7 +42,7 @@ function GetPersonChoice(props){
   const [superGetPersonChoice, setGetPersonChoice] = useState([]);
  
   useEffect(() => {
-    axios.get(`https://localhost:7159/api/Person/${props.location.state}/Movie`)
+    axios.get(`https://localhost:7159/api/Person/${props.match.params.id}/Movie`)
         .then((response) => {
         setGetPersonChoice((data) => {
         return response.data;

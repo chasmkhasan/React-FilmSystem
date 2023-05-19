@@ -37,7 +37,7 @@ const Text = styled.p`
 
 function Person() {
   const [superPerson, setPerson] = useState([]);
- 
+   
   useEffect(() => {
     axios.get("https://localhost:7159/api/AllPerson").then((response) => {
       setPerson((data) => {
@@ -45,6 +45,8 @@ function Person() {
       });
     });
   }, []);
+
+  
 
   return(
     <>
@@ -54,17 +56,11 @@ function Person() {
         <tbody>
             {superPerson.map((sv) => {
                 return (
-                <Column key = {sv.id} onClick={() => handlePersonClick(sv)}>
+                <Column key = {sv.id}>
                   <Card>
                     <Title><b>Name:</b>{sv.name}</Title>
                     <Title><b>Email:</b>{sv.email}</Title>
-                    <td>
-                      <a href= "/GetPersonChoise" >Genre List</a>
-                      <Link to={{ pathname: "/GetPersonChoise", state: sv.id }}>
-                        Further go foreward
-                      </Link>
-
-                    </td>
+                    <a href= {'/GetPersonChoice/' + sv.id } > See Person Choice</a>
                   </Card>
                 </Column>
               )
