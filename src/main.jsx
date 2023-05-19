@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
 import './index.css';
-import MainComponents from './assets/components/shared/Index.jsx';
+
+import Layout from './assets/components/shared/Layout.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <MainComponents/>
+    <Layout/>
     <App />
   </React.StrictMode>,
 )

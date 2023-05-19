@@ -2,9 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
-import GetPersonChoice from "./GetPersonChoice";
 
 const Column = styled.div`
    display: flex;
@@ -35,12 +33,12 @@ const Text = styled.p`
     text-justify: center;
 `;
 
-function Person() {
-  const [superPerson, setPerson] = useState([]);
+function Genre() {
+  const [superGenre, setGenre] = useState([]);
  
   useEffect(() => {
-    axios.get("https://localhost:7159/api/AllPerson").then((response) => {
-      setPerson((data) => {
+    axios.get("https://localhost:7159/api/AllGenres").then((response) => {
+      setGenre((data) => {
         return response.data;
       });
     });
@@ -49,22 +47,15 @@ function Person() {
   return(
     <>
        <div>
-      <h2>Persons Data...</h2>
+      <h2>Genres Data...</h2>
       <table>
         <tbody>
-            {superPerson.map((sv) => {
+            {superGenre.map((sv) => {
                 return (
-                <Column key = {sv.id} onClick={() => handlePersonClick(sv)}>
+                <Column key = {sv.id}>
                   <Card>
-                    <Title><b>Name:</b>{sv.name}</Title>
-                    <Title><b>Email:</b>{sv.email}</Title>
-                    <td>
-                      <a href= "/GetPersonChoise" >Genre List</a>
-                      <Link to={{ pathname: "/GetPersonChoise", state: sv.id }}>
-                        Further go foreward
-                      </Link>
-
-                    </td>
+                    <Title><b>Movie Type:- </b>{sv.title}</Title>
+                    <Title><b>Movie Description:- </b>{sv.description}</Title>
                   </Card>
                 </Column>
               )
@@ -77,7 +68,7 @@ function Person() {
   )
 }
 
-export default Person;
+export default Genre;
 
 
 
